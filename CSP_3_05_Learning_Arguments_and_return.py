@@ -56,48 +56,28 @@ def grade(score):
 #if the number is divisible by 5 print "buzz"
 #if both are the case then print "Fizzbuzz" instead of the prior two
 #if niether are the case print the number.
-def fizzbuzz():
-    n = input("Give me a number")
-    n = int(n)
-    if(n%5==0 and n%3==0):
-        print( "FizzBuzz")
-    elif(n%3==0):
-        print ("fizz")
-    elif(n%5==0):
-        print ("buzz")
-    else:
-        print(n)
-
-def fizzbuzz(n):
+def fizzBuzz(n):
     if n % 3 == 0 and n % 5 == 0:
-        return "Fizzbuzz"
+        return "FizzBuzz"
     elif n % 3 == 0:
-        return "fizz"
+        return "Fizz"
     elif n % 5 == 0:
-        return "buzz"
+        return "Buzz"
     else:
-        return n
+        return str(n)
 #modify the below function such that it asks the user for an input number.
 #if the number is even divide it by two.
 #if the number is odd multiply it by 3 and add 1
 #then print the new number.
-def collatz():
-    n = input("Give me a number")
-    n = int(n)
-    if(n==1):
-        print (n)
-    if(n%2==0):
-        print (n/2)
-    else:
-        print (3*n+1)
-
 def collatz(n):
-    if n == 1:
-        return 1
-    elif n % 2 == 0:
-        return n // 2
-    else:
-        return 3 * n + 1
+    steps = 0
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        steps += 1
+    return steps
 
 def convertTemperature(temp_str):
     temp_str = temp_str.strip().upper()
